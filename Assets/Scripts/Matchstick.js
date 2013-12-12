@@ -4,6 +4,8 @@ var fireEmitter : GameObject;
 
 var ignited = false;
 
+var audioEffect : GameObject;
+
 function Ignite(mode : IgniteMode) {
 	if(!ignited) {
 		Instantiate(fireEmitter, transform.position, Quaternion.identity);
@@ -17,6 +19,10 @@ function Ignite(mode : IgniteMode) {
 		for(var i = 0; i < colliders.Length; i++) {
 			colliders[i].SendMessage("Ignite", IgniteMode.Untouched, SendMessageOptions.DontRequireReceiver);
 		}
+		
+		audioEffect.SetActive(true);
+		Destroy(audioEffect, audioEffect.audio.clip.length);
+		audioEffect.transform.parent = null;
 		
 		Destroy(gameObject);
 	}

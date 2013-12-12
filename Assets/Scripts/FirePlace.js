@@ -32,6 +32,7 @@ function Ignite(mode : IgniteMode) {
 		transform.FindChild("Fire").gameObject.SetActive(true);
 		transform.FindChild("light").gameObject.SetActive(true);
 		ignited = true;
+		FireSound.Burn();
 	}
 }
 

@@ -17,9 +17,11 @@ function Update () {
 			fireParticles.transform.position = hit.point;
 			hit.collider.SendMessage("Ignite", IgniteMode.Touched, SendMessageOptions.DontRequireReceiver);
 		} 
+		FireSound.Burn();
 	} 
 	if(Input.GetButtonDown("Fire1")) {
 		fireParticles.SetActive(true);
+		
 	} 
 	if(Input.GetButtonUp("Fire1")) {
 		fireParticles.SetActive(false);

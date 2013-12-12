@@ -33,6 +33,7 @@ function Update () {
 function Ignite(mode : IgniteMode) {
 	ignited = true;
 	transform.GetChild(0).gameObject.SetActive(true);
+	FireSound.Burn();
 }
 
 function OnCollisionEnter(col : Collision) {
